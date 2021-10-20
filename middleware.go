@@ -4,7 +4,7 @@ import (
 	"net/http"
 )
 
-func httpJSONResponse(next http.HandlerFunc) http.HandlerFunc {
+func HttpJSONResponse(next http.HandlerFunc) http.HandlerFunc {
 	return http.HandlerFunc(func(rw http.ResponseWriter, r *http.Request) {
 		switch r.Method {
 		case http.MethodGet:
@@ -17,7 +17,7 @@ func httpJSONResponse(next http.HandlerFunc) http.HandlerFunc {
 	})
 }
 
-func httpCORS(next http.HandlerFunc) http.HandlerFunc {
+func HttpCORS(next http.HandlerFunc) http.HandlerFunc {
 	return http.HandlerFunc(func(rw http.ResponseWriter, r *http.Request) {
 		rw.Header().Set("Access-Control-Allow-Origin", "*")
 		rw.Header().Set("Access-Control-Allow-Headers", "Content-Type")

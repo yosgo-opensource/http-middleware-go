@@ -18,7 +18,7 @@ func TestHTTPCORSHeaders(t *testing.T) {
 	req := httptest.NewRequest(http.MethodPost, "/_watermark", nil)
 	w := httptest.NewRecorder()
 
-	cors := httpCORS(ServeHTTP)
+	cors := HttpCORS(ServeHTTP)
 	cors(w, req)
 
 	res := w.Result()
@@ -32,7 +32,7 @@ func TestJSONResponseHeaders(t *testing.T) {
 	req := httptest.NewRequest(http.MethodPost, "/_watermark", nil)
 	w := httptest.NewRecorder()
 
-	cors := httpJSONResponse(ServeHTTP)
+	cors := HttpJSONResponse(ServeHTTP)
 	cors(w, req)
 
 	res := w.Result()
